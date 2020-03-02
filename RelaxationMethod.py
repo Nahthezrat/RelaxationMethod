@@ -18,10 +18,9 @@ def relaxation(matrix_a, vector_b, w, eps):
             for j in range(n):
                 if i != j:
                     vector_x[i] = vector_x[i] - matrix_a[i][j] * vector_x[j]
+
             vector_x[i] /= matrix_a[i][i]
-
             vector_x[i] = w*vector_x[i]+(1-w)*vector_xn[i]
-
             if math.fabs(vector_x[i] - vector_xn[i]) > norm:
                 norm = math.fabs(vector_x[i]-vector_xn[i])
             vector_xn[i] = vector_x[i]
